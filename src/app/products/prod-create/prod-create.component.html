@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="prodForm" (ngSubmit)="onSaveProd()" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput placeholder="Enter ProdName Here" name="name" formControlName="name">
+      <mat-error *ngIf="prodForm.get('name').hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input  placeholder="Enter Cost Here" name="cost" matInput formControlName="cost">
+      <mat-error *ngIf="prodForm.get('cost').hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary">
+      Save Product
+    </button>
+  </form>
+</mat-card>

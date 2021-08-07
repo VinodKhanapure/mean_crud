@@ -1,0 +1,22 @@
+<mat-card>
+  <form #loginForm='ngForm' (submit)="onLogin(loginForm)">
+    <mat-form-field>
+      <input matInput type="email" name="email" placeholder="Email Id" #emailInput="ngModel" ngModel required email autofocus>
+      <mat-error *ngIf="emailInput.invalid">
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+      <input matInput type="password" name="password" placeholder="Password" #passwordInput="ngModel" ngModel required>
+      <mat-error *ngIf="passwordInput.invalid">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+    <button mat-raised-button color="primary"> Login</button>
+
+
+  </form>
+</mat-card>
